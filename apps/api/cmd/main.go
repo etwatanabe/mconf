@@ -30,15 +30,13 @@ func main() {
     api.HandleFunc("/search", bookHandler.SearchBooks).Methods("GET")
     api.HandleFunc("/health", bookHandler.HealthCheck).Methods("GET")
 
-    r.HandleFunc("/search", bookHandler.SearchBooks).Methods("GET")
-    r.HandleFunc("/health", bookHandler.HealthCheck).Methods("GET")
-
     n := negroni.Classic()
+    
     n.UseHandler(r)
 
     log.Printf("Starting server on port %s", cfg.Port)
-    log.Printf("Health check available at: http://localhost:%s/health", cfg.Port)
-    log.Printf("Search endpoint: http://localhost:%s/search?q=<query>", cfg.Port)
+    log.Printf("Health check available at: http://localhost:%s/api/v1/health", cfg.Port)
+    log.Printf("Search endpoint: http://localhost:%s/api/v1/search?q=<query>", cfg.Port)
 
     log.Fatal(http.ListenAndServe(":"+cfg.Port, n))
 }

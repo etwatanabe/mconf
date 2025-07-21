@@ -20,7 +20,5 @@ docker run -ti --rm -e API_PORT=3000 mconf/runner:candidato-1 "Lord of the Rings
 
 ## Endpoints
 
-- `GET /search?q=<query>` - Busca livros
-- `GET /health` - Health check
 - `GET /api/v1/search?q=<query>` - API versionada
 - `GET /api/v1/health` - Health check versionado

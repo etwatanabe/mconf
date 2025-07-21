@@ -13,7 +13,7 @@ class BookSearchClient:
 
     def search_books(self, query: str) -> Dict[str, Any]:
         """Search for books using the API."""
-        url = f"{self.base_url}/search"
+        url = f"{self.base_url}/api/v1/search"
         params = {'q': query}
         
         print(f"Searching for: '{query}'...")
