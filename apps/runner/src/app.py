@@ -64,8 +64,8 @@ class BookSearchClient:
 def main():
     parser = argparse.ArgumentParser(description='Search for books')
     parser.add_argument('query', help='Search query')
-    parser.add_argument('--host', default=os.getenv('API_HOST', 'localhost'), 
-                       help='API host (default: localhost)')
+    parser.add_argument('--host', default=os.getenv('API_HOST', 'host.docker.internal'), 
+                       help='API host (default: host.docker.internal)')
     parser.add_argument('--port', default=os.getenv('API_PORT', '3000'), 
                        help='API port (default: 3000)')
     
